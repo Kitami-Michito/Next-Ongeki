@@ -1,5 +1,0 @@
-#譜面マスタ
-CREATE TABLE FUMEN_MST(id serial,name VARCHAR(255),difficulty Integer,rate real,lastUpdate TIMESTAMP);
-
-#難易度マスタ
-CREATE TABLE DIFFICULTY_MST(name VARCHAR(255),difficulty Integer,lastUpdate TIMESTAMP);
