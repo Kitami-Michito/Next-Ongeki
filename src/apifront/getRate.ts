@@ -3,7 +3,7 @@ import axios from "axios";
 export const getRateApi ={
     async getFumenRate(fumenName: string ): Promise<number> {
 
-        const response = await axios.get("https://nvpfae6628.execute-api.us-east-2.amazonaws.com/dev/rategetemer");
+        const response = await axios.get("http://localhost:3000/api/getRate");
         return response.data.songRate;
     }
 }
