@@ -39,7 +39,7 @@ export const getSongRate = createAsyncThunk<
 }
 >('getSongRate', async(args,thunkApi) =>{
   try {
-    const response = await ScoreCalculateLog.getSongRate();
+    const response = await ScoreCalculateLog.getSongRate(args.songName);
     return {songRate: response}
   }catch{
     return thunkApi.rejectWithValue({

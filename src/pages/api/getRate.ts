@@ -43,9 +43,10 @@ export default function handler(
   try {
     connection.authenticate();
     console.log('Connection has been established successfully.');
+    console.log(req.query.name);
 
     FumenMst.sync();
-    FumenMst.findOne({where:{ name: ['Destiny Runner']}}).then(function(value){
+    FumenMst.findOne({where:{ name: [req.query.name]}}).then(function(value){
       console.log(value);
       res.status(200).json({songRate: value?.dataValues.level });
     });

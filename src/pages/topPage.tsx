@@ -25,7 +25,7 @@ export default function FirstPost() {
                     onChange={(e: any) => setScore(e.target.value)} />
                 <button
                     className={styles.button}
-                    onClick={() => dispatch(getSongRate({ songName: 'a', difficulty: 'a' }))}
+                    onClick={() => dispatch(getSongRate({ songName: 'Destiny Runner', difficulty: 'a' }))}
                 >
                     楽曲Rate取得
                 </button>

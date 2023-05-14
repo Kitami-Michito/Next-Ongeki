@@ -2,8 +2,8 @@ import { getRateApi } from "../apifront/getRate";
 
 export const ScoreCalculateLog = {
     // 楽曲レート取得(DBから取得したい)
-    async getSongRate(): Promise<number>{
-        return getRateApi.getFumenRate('aa');
+    async getSongRate(songName : string): Promise<number>{
+        return getRateApi.getFumenRate(songName);
     },
     //楽曲レート取得(DBから取得したい)
     async getSongLateFromDB(): Promise<number>{
