@@ -8,14 +8,21 @@ import { useAppDispatch } from '@/store/hooks';
 export default function FirstPost() {
     const dispatch = useAppDispatch();
     const [score ,setScore] = useState(1010000);
-    const song = useSelector((state: RootState) => state.calculate.song);
+    const [songName, setSongName] = useState('Äventyr');
     const songRate = useSelector((state: RootState) => state.calculate.songRate);
     const playRate  = useSelector((state: RootState) => state.calculate.playRate);
     
     return (
         <div>
             <h1>First Post</h1>
-                <div className={styles.row}>
+            <div className={styles.row}>
+                譜面名入力欄
+                 <input
+                    type="string"
+                    className={styles.textbox}
+                    aria-label="setSongName"
+                    value={songName}
+                    onChange={(e: any) => setSongName(e.target.value)} />
                 スコア入力欄
                 <input
                     type="number"
@@ -25,7 +32,7 @@ export default function FirstPost() {
                     onChange={(e: any) => setScore(e.target.value)} />
                 <button
                     className={styles.button}
-                    onClick={() => dispatch(getSongRate({ songName: 'Destiny Runner', difficulty: 'a' }))}
+                    onClick={() => dispatch(getSongRate({ songName, difficulty: 'a' }))}
                 >
                     楽曲Rate取得
                 </button>

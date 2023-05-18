@@ -7,7 +7,7 @@ export interface ScoreLate {
   playRate: number;
   songRate: number;
   score: number;
-  song: string;
+  songName: string;
   difficulty: string;
   status: 'idle' | 'loading' | 'failed';
 }
@@ -18,7 +18,7 @@ const initialState: ScoreLate = {
   songRate: 0,
   playRate: 0,
   score: 0,
-  song: "aa",   
+  songName: "aa",   
   difficulty: "MASTER",
   status: 'idle',
 };
@@ -85,13 +85,10 @@ export const calculate = createSlice({
       state.value = 0;
       state.songRate = 0;
       state.score = 0;
-      state.song = "";
+      state.songName = "";
       state.difficulty = "MASTER";
     },
     setSongRate(state,action){
-      state.songRate = action.payload;
-    },
-    setSong(state,action){
       state.songRate = action.payload;
     },
     setPlayRate(state,action){
@@ -107,6 +104,6 @@ export const calculate = createSlice({
     });
   }
 })
-export const{clearSearchState, setSongRate, setSong, setPlayRate} =calculate.actions;
+export const{clearSearchState, setSongRate, setPlayRate} =calculate.actions;
 
 export default calculate.reducer;
