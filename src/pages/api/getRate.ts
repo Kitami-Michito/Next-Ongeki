@@ -5,10 +5,11 @@ type Data = {
   songRate: number
 }
 const connection = new Sequelize(
-  "postgres",      //DB名
-  "postgres",      //ユーザー名
-  "reactOngeki",     //パスワード
+  process.env.DB_NAME || "",      //DB名
+  process.env.DB_USER || "",      //ユーザー名
+  process.env.DB_PASS || "",     //パスワード
   {
+    host:process.env.DB_HOST,    //host名
     dialect: "postgres"   //DBの製品名
   }
 );
