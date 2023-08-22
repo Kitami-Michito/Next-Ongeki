@@ -14,7 +14,7 @@ export default function FirstPost() {
     
     return (
         <div>
-            <h1>レーティング計算</h1>
+            <h1>レート挿入画面</h1>
             <div className={styles.row}>
                 譜面名入力欄
                  <input
@@ -23,24 +23,26 @@ export default function FirstPost() {
                     aria-label="setSongName"
                     value={songName}
                     onChange={(e: any) => setSongName(e.target.value)} />
-                スコア入力欄
+                レート入力欄
                 <input
                     type="number"
                     className={styles.textbox}
                     aria-label="setScore"
                     value={score}
                     onChange={(e: any) => setScore(e.target.value)} />
+                難易度
+                <input
+                    type="number"
+                    className={styles.textbox}
+                    aria-label="setScore"
+                    value={score}
+                    onChange={(e: any) => setScore(e.target.value)} />
+                
                 <button
                     className={styles.button}
                     onClick={() => dispatch(getSongRate({ songName, difficulty: 'a' }))}
                 >
-                    楽曲Rate取得
-                </button>
-                <button
-                    className={styles.button}
-                    onClick={() => dispatch(rateCalculate({ score, songRate }))}
-                >
-                    レート計算
+                    登録
                 </button>
                 
             </div>

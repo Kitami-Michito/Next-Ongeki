@@ -5,9 +5,9 @@ type Data = {
   songRate: number
 }
 const connection = new Sequelize(
-  process.env.DB_NAME || "",      //DB名
-  process.env.DB_USER || "",      //ユーザー名
-  process.env.DB_PASS || "",     //パスワード
+  process.env.DB_NAME ?? "",      //DB名
+  process.env.DB_USER ?? "",      //ユーザー名
+  process.env.DB_PASS ?? "",     //パスワード
   {
     host:process.env.DB_HOST,    //host名
     dialect: "postgres"   //DBの製品名
@@ -45,6 +45,7 @@ export default function handler(
     connection.authenticate();
     console.log('Connection has been established successfully.');
     console.log(req.query.name);
+    
 
     FumenMst.sync();
     FumenMst.findOne({where:{ name: [req.query.name]}}).then(function(value){
