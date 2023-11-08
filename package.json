@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "set NODE_OPTIONS=--inspect && next dev",
+    "dev": "set NODE_OPTIONS=--inspect && next dev -p 8080",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 8080",
     "lint": "next lint"
   },
   "dependencies": {
@@ -26,5 +26,8 @@
     "react-redux": "^8.0.5",
     "sequelize": "^6.31.1",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.10.7"
   }
 }
