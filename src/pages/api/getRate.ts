@@ -13,6 +13,9 @@ const connection = new Sequelize(
     host: process.env.DB_HOST, //host名
     dialect: "postgres", //DBの製品名
     dialectModule: pg, //使用するライブラリ
+    dialectOptions: {
+      ssl: true,
+    },
   }
 );
 
