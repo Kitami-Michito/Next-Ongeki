@@ -14,7 +14,10 @@ const connection = new Sequelize(
     dialect: "postgres", //DBの製品名
     dialectModule: pg, //使用するライブラリ
     dialectOptions: {
-      ssl: true,
+      ssl: {
+        require: true,
+        rejectUnauthorized: false,
+      },
     },
   }
 );
